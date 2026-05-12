@@ -72,12 +72,14 @@ async def on_message(message: discord.Message):
     if not pairs:
         return
 
-    lines = ["👀 Tracker détecté, je suis là !\n"]
+    content = message.content
     for original, clean in pairs:
-        lines.append(f"🔗 {clean}")
-    lines.append("\nBonne lecture !")
+        content = content.replace(original, clean)
 
-    await message.reply("\n".join(lines), mention_author=False)
+    await message.delete()
+    await message.channel.send(
+        f"**{message.author.display_name}** : {content}\n-# 🔗 Liens nettoyés des trackers"
+    )
 
 
 client.run(os.environ["DISCORD_TOKEN"])
