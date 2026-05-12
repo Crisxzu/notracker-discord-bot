@@ -3,12 +3,13 @@
 Bot Discord qui détecte et retire automatiquement les paramètres de tracking des liens partagés dans un serveur.
 
 **Exemple :**
-> `https://youtu.be/5uQgPimX7vU?si=Flwg59P8om9voa8b`
 
-Le bot répond :
-> 👀 Tracker détecté, je suis là !
-> 🔗 https://youtu.be/5uQgPimX7vU
-> Bonne lecture !
+Chris envoie :
+> `Regarde cette vidéo https://youtu.be/5uQgPimX7vU?si=Flwg59P8om9voa8b`
+
+Le bot supprime le message et le reposte ainsi :
+> **Chris** : Regarde cette vidéo https://youtu.be/5uQgPimX7vU
+> *🔗 Liens nettoyés des trackers*
 
 ## Trackers supprimés
 
@@ -67,5 +68,6 @@ Dans **OAuth2 → URL Generator** :
   - ✅ Read Messages / View Channels
   - ✅ Send Messages
   - ✅ Read Message History
+  - ✅ Manage Messages
 
 Copier l'URL générée et l'ouvrir dans un navigateur pour inviter le bot.
